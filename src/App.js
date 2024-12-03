@@ -16,7 +16,11 @@ import MultiplesServidoresSinEspera from './MultiplesServidoresSinEspera';
 import FuentesFinitas from './FuentesFinitas';
 import QPCalculator from './QPCalculator'; 
 import ProgramacionSeparable from './ProgramacionSeparable';
+import ProgramacionNoConvexa from './ProgramacionNoConvexa';
 
+import ProgramacionConvexa from './ProgramacionConvexa';
+import ProgramacionFraccionaria from './ProgramacionFraccionaria';
+import ProgramacionGeometrica from './ProgramacionGeometrica';
 
 function App() {
   const [selectedUnit, setSelectedUnit] = useState(null); 
@@ -134,6 +138,19 @@ function App() {
           <button onClick={() => handleSelectMethod('ProgramacionSeparable')}>
             Programación Separable
           </button>
+          <button onClick={() => handleSelectMethod('ProgramacionNoConvexa')}>
+            Programación No Convexa
+          </button>
+
+          <button onClick={() => handleSelectMethod('ProgramacionGeometrica')}>
+            Programación Geometrica
+          </button>
+          <button onClick={() => handleSelectMethod('ProgramacionFraccionaria')}>
+            Programación Fraccionaria
+          </button>
+          <button onClick={() => handleSelectMethod('ProgramacionConvexa')}>
+            Programación Convexa
+          </button>
         </div>
       )}
 
@@ -146,8 +163,11 @@ function App() {
       {selectedMethod === 'FuentesFinitas' && <FuentesFinitas />}
       {selectedMethod === 'QP' && <QPCalculator />}
       {selectedMethod === 'ProgramacionSeparable' && <ProgramacionSeparable />}
+      {selectedMethod === 'ProgramacionNoConvexa' && <ProgramacionNoConvexa />}
 
-      
+      {selectedMethod === 'ProgramacionGeometrica' && <ProgramacionGeometrica />}
+      {selectedMethod === 'ProgramacionFraccionaria' && <ProgramacionFraccionaria />}
+      {selectedMethod === 'ProgramacionConvexa' && <ProgramacionConvexa />}
       {/* Botón universal de "Volver" */}
       {(selectedUnit || selectedMethod || subMethod) && (
         <div>
