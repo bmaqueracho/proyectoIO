@@ -1,0 +1,141 @@
+/* General body styling */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom right, #432a7e, #1b9bd6); /* Gradiente de fondo */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #333;
+}
+
+/* Estilo principal de la App */
+.App {
+  text-align: center;
+  background: #aebfee;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Efecto 3D */
+  max-width: 90%;
+  width: 800px;
+}
+
+/* Título principal */
+h1, h2 {
+  color: #3b3a3a;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* Botones */
+button {
+  background: linear-gradient(45deg, #6a11cb, #2575fc); /* Gradiente */
+  color: #fff;
+  border: none;
+  border-radius: 30px; /* Bordes redondeados */
+  padding: 12px 25px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  margin: 10px;
+}
+
+button:hover {
+  transform: scale(1.05); /* Aumenta tamaño */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3); /* Más profundidad */
+}
+
+button:active {
+  transform: scale(0.95); /* Reduce tamaño al hacer clic */
+}
+
+/* Botón especial */
+button.volver {
+  background: linear-gradient(45deg, #ff7e5f, #feb47b);
+}
+
+button.volver:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 126, 95, 0.4); /* Tonos cálidos */
+}
+
+/* Tarjetas (Cards) */
+.card {
+  background: #e5ebf5;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin: 20px 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Inputs de texto */
+input {
+  width: 90%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+input:focus {
+  border-color: #6a11cb; /* Resalta en gradiente */
+}
+
+/* Etiquetas */
+label {
+  color: #555;
+  font-size: 20px;
+  margin-bottom: 5px;
+  display: block;
+  font: oblique bold 120% cursive;
+}
+
+/* Ajuste de h3 */
+h3 {
+  color: #555;
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* Estilo para títulos pequeños */
+h2 {
+  font-size: 24px;
+  color: #444;
+}
+
+/* Mejora general para textos */
+p {
+  color: #666;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Links (en caso de necesitar) */
+a {
+  color: #6a11cb;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+td {
+  font-size: 20px;
+
+}

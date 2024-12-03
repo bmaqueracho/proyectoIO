@@ -1,0 +1,134 @@
+body {
+  background-color: #f5f5dc; /* Fondo crema claro */
+  color: #333; /* Texto oscuro para contraste */
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+.arbol-de-decision-contenedor {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 12px; /* Bordes redondeados en el contenedor principal */
+  overflow: hidden; /* Para que los bordes redondeados se mantengan */
+}
+
+h1 {
+  font-size: 28px;
+  margin: 20px 0;
+  color: #4d4d4d; /* Tono crema oscuro para el encabezado */
+}
+
+.arbol-decision-tabla {
+  width: 100%;
+  border-collapse: separate; /* Usar bordes separados */
+  border-spacing: 0; /* Eliminar el espacio entre celdas */
+  background-color: #f1e1ac; /* Fondo de la tabla en crema claro */
+  border-radius: 12px; /* Bordes redondeados en la tabla */
+  overflow: hidden; /* Mantener bordes redondeados en la tabla */
+}
+
+.arbol-de-decision-tabla th,
+.arbol-de-decision-tabla td {
+  padding: 15px; /* Espaciado dentro de celdas */
+  text-align: left; /* Alinear texto a la izquierda */
+  border: none; /* Sin bordes en celdas */
+}
+
+.arbol-de-decision-tabla th {
+  background-color: #fff3e0; /* Fondo de encabezados en crema suave */
+  color: #4d4d4d; /* Color de texto de encabezados */
+}
+
+.arbol-de-decision-tabla tr {
+  transition: background-color 0.3s; /* Transición suave al pasar el ratón */
+}
+
+.arbol-de-decision-tabla tr:hover {
+  background-color: #ffe0b2; /* Color de fondo al pasar el ratón en tono crema */
+}
+
+.arbol-de-decision-tabla tr.seleccionado {
+  background-color: #dac8ac; /* Color para el nodo seleccionado en crema claro */
+}
+
+.arbol-de-decision-tabla input {
+  background-color: #fff; /* Fondo blanco para inputs */
+  color: #333; /* Color de texto de inputs */
+  border: none; /* Sin bordes en inputs */
+  border-radius: 8px; /* Bordes redondeados en inputs */
+  padding: 8px; /* Espaciado interno */
+  width: 100%; /* Ancho completo */
+  box-sizing: border-box; /* Incluye padding en el tamaño total */
+}
+
+.acciones {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #fff3e0; /* Fondo de acciones en crema suave */
+  border-radius: 8px; /* Bordes redondeados */
+}
+
+label {
+  display: block;
+  margin: 10px 0; /* Margen entre etiquetas */
+  color: #4d4d4d; /* Color de texto de etiquetas */
+}
+
+.botones {
+  margin-top: 10px;
+}
+
+button {
+  margin: 5px;
+  padding: 10px 20px;
+  border-radius: 8px; /* Bordes redondeados en botones */
+  font-size: 16px;
+  border: none; /* Sin bordes en botones */
+  cursor: pointer; /* Cambia cursor al pasar */
+  transition: background-color 0.3s; /* Transición suave al cambiar color */
+}
+
+button.agregar {
+  background-color: #ffd54f; /* Color amarillo crema para agregar */
+  color: #333;
+}
+
+button.eliminar {
+  background-color: #ffab40; /* Color naranja crema para eliminar */
+  color: #333;
+}
+
+button:hover {
+  opacity: 0.9; /* Ligera opacidad al pasar el ratón */
+}
+
+/* Estilos para diferenciar los niveles en el árbol de decisiones */
+
+/* Nodo principal (nivel 0) */
+.nivel-0 {
+  background-color: #f9e79f; /* Amarillo suave */
+}
+
+/* Primer nivel de hijos (nivel 1) */
+.nivel-1 {
+  background-color: #f7dc6f; /* Amarillo más fuerte */
+}
+
+/* Segundo nivel de hijos (nivel 2) */
+.nivel-2 {
+  background-color: #f4d03f; /* Amarillo intenso */
+}
+
+/* Tercer nivel de hijos (nivel 3) */
+.nivel-3 {
+  background-color: #f39c12; /* Naranja claro */
+}
+
+/* Cuarto nivel de hijos (nivel 4) */
+.nivel-4 {
+  background-color: #e67e22; /* Naranja más intenso */
+}
+
+/* Continúa añadiendo niveles adicionales si es necesario */
