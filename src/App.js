@@ -23,6 +23,9 @@ import ProgramacionConvexa from './ProgramacionConvexa';
 import ProgramacionFraccionaria from './ProgramacionFraccionaria';
 import ProgramacionGeometrica from './ProgramacionGeometrica';
 import HolguraPorRechazos from './HolguraPorRechazos';
+import DistribucionCientificos from './DistribucionCientificos';
+import JuegoApuestas from './JuegoApuestas';
+import AsignacionBrigadas from './AsignacionBrigadas';
 //import OptimizacionSinRestricciones from './OptimizacionSinRestricciones';
 
 function App() {
@@ -263,6 +266,9 @@ function App() {
         <div>
           <h2>Programación Dinámica</h2>
           <button onClick={() => handleSelectMethod('HolguraPorRechazos')}>Holgura por Rechazos</button>
+          <button onClick={() => handleSelectMethod('DistribucionCientificos')}>Distribucion de Cientificos</button>
+          <button onClick={() => handleSelectMethod('JuegoApuestas')}>Juego de apuestas</button>
+          <button onClick={() => handleSelectMethod('AsignacionBrigadas')}>Asignacion de Brigadas</button>
           <button onClick={goBack}>Volver</button>
         </div>
       )}
@@ -271,6 +277,24 @@ function App() {
           <HolguraPorRechazos />
           <button onClick={goBack}>Volver</button>
         </div>
+      )}
+      {selectedMethod === 'DistribucionCientificos' && (
+        <div>
+          <DistribucionCientificos />
+          <button onClick={goBack}>Volver</button>
+        </div>
+      )}
+      {selectedMethod === 'JuegoApuestas' && (
+          <div>
+            <JuegoApuestas />
+            <button onClick={goBack}>Volver</button>
+          </div>
+      )}
+      {selectedMethod === 'AsignacionBrigadas' && (
+          <div>
+            <AsignacionBrigadas />
+            <button onClick={goBack}>Volver</button>
+          </div>
       )}
     </div>
   );
