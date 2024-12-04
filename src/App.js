@@ -8,16 +8,17 @@ import MIFPCalculator from './MIFPCalculator';
 import QuantityDiscountCalculator from './QuantityDiscountCalculator';
 import ArbolesDecision from './ArbolesDecision';
 import Incertidumbre from './Incertidumbre';
+
+// Importar componentes de Unidad II
 import ColasPoissonExponencial from './ColasPoissonExponencial';
 import VariosServidorPoissonExponencial from './VariosServidoresPoissonExponencial';
 import NacimientoMuerte from './NacimientoMuerte';
 import ColasPoissonArbitrario from './ColasPoissonArbitrario';
 import MultiplesServidoresSinEspera from './MultiplesServidoresSinEspera';
 import FuentesFinitas from './FuentesFinitas';
-import QPCalculator from './QPCalculator'; 
+import QPCalculator from './QPCalculator';
 import ProgramacionSeparable from './ProgramacionSeparable';
 import ProgramacionNoConvexa from './ProgramacionNoConvexa';
-
 import ProgramacionConvexa from './ProgramacionConvexa';
 import ProgramacionFraccionaria from './ProgramacionFraccionaria';
 import ProgramacionGeometrica from './ProgramacionGeometrica';
@@ -25,32 +26,26 @@ import HolguraPorRechazos from './HolguraPorRechazos';
 import OptimizacionSinRestricciones from './OptimizacionSinRestricciones';
 
 function App() {
-  const [selectedUnit, setSelectedUnit] = useState(null); 
-  const [selectedMethod, setSelectedMethod] = useState(null); 
-  const [subMethod, setSubMethod] = useState(null); 
+  const [selectedUnit, setSelectedUnit] = useState(null);
+  const [selectedMethod, setSelectedMethod] = useState(null);
 
+  // Manejar selección de unidad
   const handleSelectUnit = (unit) => {
     setSelectedUnit(unit);
-    setSelectedMethod(null);
-    setSubMethod(null);
+    setSelectedMethod(null); // Resetear el método cuando se cambia la unidad
   };
 
+  // Manejar selección de método
   const handleSelectMethod = (method) => {
     setSelectedMethod(method);
-    setSubMethod(null);
   };
 
-  const handleSelectSubMethod = (submethod) => {
-    setSubMethod(submethod);
-  };
-
+  // Función para regresar al menú anterior
   const goBack = () => {
-    if (subMethod) {
-      setSubMethod(null);
-    } else if (selectedMethod) {
-      setSelectedMethod(null);
+    if (selectedMethod) {
+      setSelectedMethod(null); // Volver al menú de métodos
     } else if (selectedUnit) {
-      setSelectedUnit(null);
+      setSelectedUnit(null); // Volver al menú principal
     }
   };
 
@@ -79,108 +74,208 @@ function App() {
       )}
 
       {/* Métodos de UNIDAD I */}
-      {selectedMethod === 'CPM' && <CpmCalculator />}
-      {selectedMethod === 'PERT' && <PertCalculator />}
-      {selectedMethod === 'OPTIMIZACION' && <Optimizacion />}
-      
-      {selectedMethod === 'INVENTARIO' && !subMethod && (
+      {selectedMethod === 'CPM' && (
+        <div>
+          <CpmCalculator />
+          <button onClick={goBack}>Volver</button>
+        </div>
+      )}
+      {selectedMethod === 'PERT' && (
+        <div>
+          <PertCalculator />
+          <button onClick={goBack}>Volver</button>
+        </div>
+      )}
+      {selectedMethod === 'OPTIMIZACION' && (
+        <div>
+          <Optimizacion />
+          <button onClick={goBack}>Volver</button>
+        </div>
+      )}
+      {selectedMethod === 'INVENTARIO' && (
         <div>
           <h2>Modelos de Inventario</h2>
-          <button onClick={() => handleSelectSubMethod('EOQ')}>EOQ</button>
-          <button onClick={() => handleSelectSubMethod('EPQ')}>EPQ</button>
-          <button onClick={() => handleSelectSubMethod('MIFP')}>MIFP</button>
-          <button onClick={() => handleSelectSubMethod('DCM')}>Descuentos por Cantidad</button>
+          <button onClick={() => handleSelectMethod('EOQ')}>EOQ</button>
+          <button onClick={() => handleSelectMethod('EPQ')}>EPQ</button>
+          <button onClick={() => handleSelectMethod('MIFP')}>MIFP</button>
+          <button onClick={() => handleSelectMethod('DCM')}>Descuentos por Cantidad</button>
           <button onClick={goBack}>Volver</button>
         </div>
       )}
-
-      {subMethod === 'EOQ' && <EOQCalculator />}
-      {subMethod === 'EPQ' && <EPQCalculator />}
-      {subMethod === 'MIFP' && <MIFPCalculator />}
-      {subMethod === 'DCM' && <QuantityDiscountCalculator />}
-
-      {selectedMethod === 'TD' && !subMethod && (
+      {selectedMethod === 'EOQ' && (
+        <div>
+          <EOQCalculator />
+          <button onClick={goBack}>Volver</button>
+        </div>
+      )}
+      {selectedMethod === 'EPQ' && (
+        <div>
+          <EPQCalculator />
+          <button onClick={goBack}>Volver</button>
+        </div>
+      )}
+      {selectedMethod === 'MIFP' && (
+        <div>
+          <MIFPCalculator />
+          <button onClick={goBack}>Volver</button>
+        </div>
+      )}
+      {selectedMethod === 'DCM' && (
+        <div>
+          <QuantityDiscountCalculator />
+          <button onClick={goBack}>Volver</button>
+        </div>
+      )}
+      {selectedMethod === 'TD' && (
         <div>
           <h2>Teoría de Decisiones</h2>
-          <button onClick={() => handleSelectSubMethod('AD')}>Árboles de Decisión</button>
-          <button onClick={() => handleSelectSubMethod('TUI')}>Incertidumbre</button>
+          <button onClick={() => handleSelectMethod('AD')}>Árboles de Decisión</button>
+          <button onClick={() => handleSelectMethod('TUI')}>Incertidumbre</button>
+          <button onClick={goBack}>Volver</button>
+        </div>
+      )}
+      {selectedMethod === 'AD' && (
+        <div>
+          <ArbolesDecision />
+          <button onClick={goBack}>Volver</button>
+        </div>
+      )}
+      {selectedMethod === 'TUI' && (
+        <div>
+          <Incertidumbre />
           <button onClick={goBack}>Volver</button>
         </div>
       )}
 
-      {subMethod === 'AD' && <ArbolesDecision />}
-      {subMethod === 'TUI' && <Incertidumbre />}
-
-     {/* Menú de Unidad II */}
+      {/* Menú de Unidad II */}
       {selectedUnit === 'UNIDAD II' && !selectedMethod && (
         <div>
           <h2>Modelos en UNIDAD II</h2>
-          <button onClick={() => handleSelectMethod('1Servidor_Poisson_Exponencial')}>
-            Un servidor / Poisson / Exponenciales
-          </button>
-          <button onClick={() => handleSelectMethod('VariosServidor_Poisson_Exponencial')}>
-            Varios servidores / Poisson / Exponenciales
-          </button>
-          <button onClick={() => handleSelectMethod('NacimientoMuerte')}>
-            Nacimiento y Muerte
-          </button>
+          <button onClick={() => handleSelectMethod('TeoriaColas')}>Teoría de Colas</button>
+          <button onClick={() => handleSelectMethod('ProgNoLineal')}>Programación No Lineal</button>
+          <button onClick={() => handleSelectMethod('ProgDinamica')}>Programación Dinámica</button>
           <button onClick={goBack}>Volver al menú principal</button>
-          <button onClick={() => handleSelectMethod('1Servidor_Poisson_Arbitrario')}>
-            Un servidor / Poisson / Arbitrarios
-          </button>
-          <button onClick={() => handleSelectMethod('MultiplesServidoresSinEspera')}>
-            Varios servidores / Poisson / Arbitrarios (sin espera)
-          </button>
-          <button onClick={() => handleSelectMethod('FuentesFinitas')}>
-            Fuentes Finitas
-          </button>
-          <button onClick={() => handleSelectMethod('QP')}>
-            Programación Cuadrática
-          </button>
-          <button onClick={() => handleSelectMethod('ProgramacionSeparable')}>
-            Programación Separable
-          </button>
-          <button onClick={() => handleSelectMethod('ProgramacionNoConvexa')}>
-            Programación No Convexa
-          </button>
-
-          <button onClick={() => handleSelectMethod('ProgramacionGeometrica')}>
-            Programación Geometrica
-          </button>
-          <button onClick={() => handleSelectMethod('ProgramacionFraccionaria')}>
-            Programación Fraccionaria
-          </button>
-          <button onClick={() => handleSelectMethod('ProgramacionConvexa')}>
-            Programación Convexa
-          </button>
-          <button onClick={() => handleSelectMethod('HolguraPorRechazos')}>
-            Holgura por rechazos
-          </button>
-          <button onClick={() => handleSelectMethod('OptimizacionSinRestricciones')}>
-            Optimizacion sin restricciones
-          </button>
         </div>
       )}
 
       {/* Métodos de UNIDAD II */}
-      {selectedMethod === '1Servidor_Poisson_Exponencial' && <ColasPoissonExponencial />}
-      {selectedMethod === 'VariosServidor_Poisson_Exponencial' && <VariosServidorPoissonExponencial />}
-      {selectedMethod === 'NacimientoMuerte' && <NacimientoMuerte />}
-      {selectedMethod === '1Servidor_Poisson_Arbitrario' && <ColasPoissonArbitrario />}
-      {selectedMethod === 'MultiplesServidoresSinEspera' && <MultiplesServidoresSinEspera />}
-      {selectedMethod === 'FuentesFinitas' && <FuentesFinitas />}
-      {selectedMethod === 'QP' && <QPCalculator />}
-      {selectedMethod === 'ProgramacionSeparable' && <ProgramacionSeparable />}
-      {selectedMethod === 'ProgramacionNoConvexa' && <ProgramacionNoConvexa />}
-
-      {selectedMethod === 'ProgramacionGeometrica' && <ProgramacionGeometrica />}
-      {selectedMethod === 'ProgramacionFraccionaria' && <ProgramacionFraccionaria />}
-      {selectedMethod === 'ProgramacionConvexa' && <ProgramacionConvexa />}
-      {selectedMethod === 'HolguraPorRechazos' && <HolguraPorRechazos />}
-      {selectedMethod === 'OptimizacionSinRestricciones' && <OptimizacionSinRestricciones />}
-      {/* Botón universal de "Volver" */}
-      {(selectedUnit || selectedMethod || subMethod) && (
+      {selectedMethod === 'TeoriaColas' && (
         <div>
+          <h2>Teoría de Colas</h2>
+          <button onClick={() => handleSelectMethod('Cola1Servidor')}>Un servidor / Poisson / Exponenciales</button>
+          <button onClick={() => handleSelectMethod('ColaVariosServidores')}>Varios servidores / Poisson / Exponenciales</button>
+          <button onClick={() => handleSelectMethod('NacimientoMuerte')}>Nacimiento y Muerte</button>
+          <button onClick={() => handleSelectMethod('ColaArbitraria')}>Colas Poisson Arbitrarias</button>
+          <button onClick={() => handleSelectMethod('MultiplesServidores')}>Múltiples Servidores sin Espera</button>
+          <button onClick={() => handleSelectMethod('FuentesFinitas')}>Fuentes Finitas</button>
+          <button onClick={goBack}>Volver</button>
+        </div>
+      )}
+      {selectedMethod === 'Cola1Servidor' && (
+        <div>
+          <ColasPoissonExponencial />
+          <button onClick={goBack}>Volver</button>
+        </div>
+      )}
+      {selectedMethod === 'ColaVariosServidores' && (
+        <div>
+          <VariosServidorPoissonExponencial />
+          <button onClick={goBack}>Volver</button>
+        </div>
+      )}
+      {selectedMethod === 'NacimientoMuerte' && (
+        <div>
+          <NacimientoMuerte />
+          <button onClick={goBack}>Volver</button>
+        </div>
+      )}
+      {selectedMethod === 'ColaArbitraria' && (
+        <div>
+          <ColasPoissonArbitrario />
+          <button onClick={goBack}>Volver</button>
+        </div>
+      )}
+      {selectedMethod === 'MultiplesServidores' && (
+        <div>
+          <MultiplesServidoresSinEspera />
+          <button onClick={goBack}>Volver</button>
+        </div>
+      )}
+      {selectedMethod === 'FuentesFinitas' && (
+        <div>
+          <FuentesFinitas />
+          <button onClick={goBack}>Volver</button>
+        </div>
+      )}
+
+      {/* Programación No Lineal */}
+      {selectedMethod === 'ProgNoLineal' && (
+        <div>
+          <h2>Programación No Lineal</h2>
+          <button onClick={() => handleSelectMethod('QPC')}>Programación Cuadrática</button>
+          <button onClick={() => handleSelectMethod('PC')}>Programación Convexa</button>
+          <button onClick={() => handleSelectMethod('PF')}>Programación Fraccionaria</button>
+          <button onClick={() => handleSelectMethod('PG')}>Programación Geométrica</button>
+          <button onClick={() => handleSelectMethod('PS')}>Programación Separable</button>
+          <button onClick={() => handleSelectMethod('PNC')}>Programación No Convexa</button>
+          <button onClick={goBack}>Volver</button>
+        </div>
+      )}
+      {selectedMethod === 'QPC' && (
+        <div>
+          <QPCalculator />
+          <button onClick={goBack}>Volver</button>
+        </div>
+      )}
+      {selectedMethod === 'PC' && (
+        <div>
+          <ProgramacionConvexa />
+          <button onClick={goBack}>Volver</button>
+        </div>
+      )}
+      {selectedMethod === 'PF' && (
+        <div>
+          <ProgramacionFraccionaria />
+          <button onClick={goBack}>Volver</button>
+        </div>
+      )}
+      {selectedMethod === 'PG' && (
+        <div>
+          <ProgramacionGeometrica />
+          <button onClick={goBack}>Volver</button>
+        </div>
+      )}
+      {selectedMethod === 'PS' && (
+        <div>
+          <ProgramacionSeparable />
+          <button onClick={goBack}>Volver</button>
+        </div>
+      )}
+      {selectedMethod === 'PNC' && (
+        <div>
+          <ProgramacionNoConvexa />
+          <button onClick={goBack}>Volver</button>
+        </div>
+      )}
+
+      {/* Programación Dinámica */}
+      {selectedMethod === 'ProgDinamica' && (
+        <div>
+          <h2>Programación Dinámica</h2>
+          <button onClick={() => handleSelectMethod('HolguraPorRechazos')}>Holgura por Rechazos</button>
+          <button onClick={() => handleSelectMethod('OptimizacionSinRestricciones')}>Optimización sin Restricciones</button>
+          <button onClick={goBack}>Volver</button>
+        </div>
+      )}
+      {selectedMethod === 'HolguraPorRechazos' && (
+        <div>
+          <HolguraPorRechazos />
+          <button onClick={goBack}>Volver</button>
+        </div>
+      )}
+      {selectedMethod === 'OptimizacionSinRestricciones' && (
+        <div>
+          <OptimizacionSinRestricciones />
           <button onClick={goBack}>Volver</button>
         </div>
       )}
