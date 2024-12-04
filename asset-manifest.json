@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/proyectoIO/static/css/main.3fc623ca.chunk.css",
+    "main.js": "/proyectoIO/static/js/main.4c4d7e7a.chunk.js",
+    "main.js.map": "/proyectoIO/static/js/main.4c4d7e7a.chunk.js.map",
+    "runtime-main.js": "/proyectoIO/static/js/runtime-main.810b66c0.js",
+    "runtime-main.js.map": "/proyectoIO/static/js/runtime-main.810b66c0.js.map",
+    "static/js/2.e7637465.chunk.js": "/proyectoIO/static/js/2.e7637465.chunk.js",
+    "static/js/2.e7637465.chunk.js.map": "/proyectoIO/static/js/2.e7637465.chunk.js.map",
+    "static/js/3.f8282c38.chunk.js": "/proyectoIO/static/js/3.f8282c38.chunk.js",
+    "static/js/3.f8282c38.chunk.js.map": "/proyectoIO/static/js/3.f8282c38.chunk.js.map",
+    "index.html": "/proyectoIO/index.html",
+    "precache-manifest.ae14c7f783da0b9f6fbced5e8adc6011.js": "/proyectoIO/precache-manifest.ae14c7f783da0b9f6fbced5e8adc6011.js",
+    "service-worker.js": "/proyectoIO/service-worker.js",
+    "static/css/main.3fc623ca.chunk.css.map": "/proyectoIO/static/css/main.3fc623ca.chunk.css.map",
+    "static/js/2.e7637465.chunk.js.LICENSE.txt": "/proyectoIO/static/js/2.e7637465.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.810b66c0.js",
+    "static/js/2.e7637465.chunk.js",
+    "static/css/main.3fc623ca.chunk.css",
+    "static/js/main.4c4d7e7a.chunk.js"
+  ]
+}
