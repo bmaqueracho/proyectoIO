@@ -21,6 +21,8 @@ import ProgramacionNoConvexa from './ProgramacionNoConvexa';
 import ProgramacionConvexa from './ProgramacionConvexa';
 import ProgramacionFraccionaria from './ProgramacionFraccionaria';
 import ProgramacionGeometrica from './ProgramacionGeometrica';
+import HolguraPorRechazos from './HolguraPorRechazos';
+import OptimizacionSinRestricciones from './OptimizacionSinRestricciones';
 
 function App() {
   const [selectedUnit, setSelectedUnit] = useState(null); 
@@ -151,6 +153,12 @@ function App() {
           <button onClick={() => handleSelectMethod('ProgramacionConvexa')}>
             Programación Convexa
           </button>
+          <button onClick={() => handleSelectMethod('HolguraPorRechazos')}>
+            Holgura por rechazos
+          </button>
+          <button onClick={() => handleSelectMethod('OptimizacionSinRestricciones')}>
+            Optimizacion sin restricciones
+          </button>
         </div>
       )}
 
@@ -168,6 +176,8 @@ function App() {
       {selectedMethod === 'ProgramacionGeometrica' && <ProgramacionGeometrica />}
       {selectedMethod === 'ProgramacionFraccionaria' && <ProgramacionFraccionaria />}
       {selectedMethod === 'ProgramacionConvexa' && <ProgramacionConvexa />}
+      {selectedMethod === 'HolguraPorRechazos' && <HolguraPorRechazos />}
+      {selectedMethod === 'OptimizacionSinRestricciones' && <OptimizacionSinRestricciones />}
       {/* Botón universal de "Volver" */}
       {(selectedUnit || selectedMethod || subMethod) && (
         <div>
