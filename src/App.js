@@ -23,7 +23,7 @@ import ProgramacionConvexa from './ProgramacionConvexa';
 import ProgramacionFraccionaria from './ProgramacionFraccionaria';
 import ProgramacionGeometrica from './ProgramacionGeometrica';
 import HolguraPorRechazos from './HolguraPorRechazos';
-import OptimizacionSinRestricciones from './OptimizacionSinRestricciones';
+//import OptimizacionSinRestricciones from './OptimizacionSinRestricciones';
 
 function App() {
   const [selectedUnit, setSelectedUnit] = useState(null);
@@ -263,19 +263,12 @@ function App() {
         <div>
           <h2>Programación Dinámica</h2>
           <button onClick={() => handleSelectMethod('HolguraPorRechazos')}>Holgura por Rechazos</button>
-          <button onClick={() => handleSelectMethod('OptimizacionSinRestricciones')}>Optimización sin Restricciones</button>
           <button onClick={goBack}>Volver</button>
         </div>
       )}
       {selectedMethod === 'HolguraPorRechazos' && (
         <div>
           <HolguraPorRechazos />
-          <button onClick={goBack}>Volver</button>
-        </div>
-      )}
-      {selectedMethod === 'OptimizacionSinRestricciones' && (
-        <div>
-          <OptimizacionSinRestricciones />
           <button onClick={goBack}>Volver</button>
         </div>
       )}
