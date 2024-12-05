@@ -1,3 +1,4 @@
+import { factorial } from 'mathjs';
 import React, { useState } from 'react';
 
 function FuentesFinitas() {
@@ -33,8 +34,8 @@ function FuentesFinitas() {
     const rho = lambdaEfectiva / (servidoresNum * muNum);
 
     let sumatoria = 0;
-    for (let n = 0; n <= servidoresNum; n++) {
-      sumatoria += (Math.pow(lambdaEfectiva / muNum, n) / calcularFactorial(n));
+    for (let n = 0; n <= Nnum; n++) {
+        sumatoria += (factorial(Nnum) / factorial(Nnum - n)) * Math.pow((lambdaNum / muNum), n);
     }
     const P0 = 1 / sumatoria;
 
